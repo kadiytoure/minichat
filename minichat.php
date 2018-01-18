@@ -6,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    #chat {
+        background-color: green;
+        opacity: 0.5;
+        height: 70vh;
+        overflow-y: scroll;
+    }
+    </style>
 </head>
 
 <body>
+<div id="chat"></div>
     <form action="minichat_post.php" method="post">
         <label for="pseudo">Pseudo:</label>
         <input type="text" id="idpseudo" name="pseudo" placeholder="enter your name" /><br/>
