@@ -10,7 +10,7 @@
     #chat {
         background-color: green;
         opacity: 0.5;
-        height: 70vh;
+        height: 55vh;
         overflow-y: scroll;
     }
     </style>
