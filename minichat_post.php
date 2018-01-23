@@ -13,4 +13,6 @@ if (empty($_POST['message'] AND $_POST['pseudo'])){
 }
 header('Location: minichat.php');
 
+$bdd = new PDO('mysql:host=localhost; dbname=minichat;charset=utf-8', 'kadiy', 'kadiy');
+
 ?>
