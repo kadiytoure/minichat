@@ -25,7 +25,23 @@
         <input type="text" id="idmessage" name="message" placeholder="enter your message" /><br/>
         <input type="submit" value="send" /><br/>
     </form>
-// manque liste des messages;
+
+<?php
+try {
+$bdd = new PDO('mysql:host=localhost; dbname=minichat;charset=utf-8', 'toure', 'kadiy');
+}
+catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
+
+$reponse = $bdd->query('SELECT * FROM chat LIMIT 0, 10');
+$donnees = $reponse->fetch();
+while ($donnees = $reponse->fetch()) {
+
+}
+
+$reponse->closeCursor();
+?>
 
 </body>
 

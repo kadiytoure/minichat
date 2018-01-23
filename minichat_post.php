@@ -17,20 +17,12 @@ header('Location: minichat.php');
 
 
 try {
-$bdd = new PDO('mysql:host=localhost; dbname=minichat;charset=utf-8', 'kadiy', 'root');
+$bdd = new PDO('mysql:host=localhost; dbname=minichat;charset=utf-8', 'toure', 'kadiy');
 }
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-/*
-$reponse = $bdd->query('SELECT * FROM chat LIMIT 0, 10');
-$donnees = $reponse->fetch();
-while ($donnees = $reponse->fetch()) {
 
-}
-
-$reponse->closeCursor();
-*/
 $req = $bdd->prepare('INSERT INTO chat(`id`, `pseudo`, `message`) VALUES(:id, :pseudo, :message)');
 $req->execute(array(
     'id' => $id,
