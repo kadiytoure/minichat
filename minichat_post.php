@@ -11,8 +11,10 @@ if (empty($_POST['message'] AND $_POST['pseudo'])){
     header('Content-Type: text/plain');
     echo 'expect a message parameter';
     exit(1);
-}
+} else {
 header('Location: minichat.php');
+}
+
 
 try {
 $bdd = new PDO('mysql:host=localhost; dbname=minichat;charset=utf-8', 'kadiy', 'kadiy');
@@ -37,4 +39,12 @@ $req->execute(array(
 ));
 
 echo 'Le message a bien été ajouté!';
+
+if ($req->execute()) {
+    echo 'ton message a bien été envoyé';
+    exit(1);
+    } else {
+       echo 'message error';
+    }
+
 ?>
