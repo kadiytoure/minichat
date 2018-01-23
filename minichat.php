@@ -25,6 +25,8 @@
         <input type="text" id="idmessage" name="message" placeholder="enter your message" /><br/>
         <input type="submit" value="send" /><br/>
     </form>
+// manque liste des messages;
+
 </body>
 
 </html>
