@@ -32,12 +32,13 @@ $req->execute(array(
 ));
 
 //echo 'Le message a bien été ajouté!';
-
+/*
 if ($req->execute()) {
     echo 'ton message a bien été envoyé';
     exit(1);
     } else {
        echo 'message error';
     }
-
+*/
+header('Location: minichat.php');
 ?>
