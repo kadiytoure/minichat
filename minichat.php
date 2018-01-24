@@ -37,7 +37,8 @@ catch (Exception $e) {
 $reponse = $bdd->query('SELECT pseudo, message FROM chat ORDER BY ID DESC LIMIT 0, 10');
 $donnees = $reponse->fetch();
 while ($donnees = $reponse->fetch()) {
-
+ echo '<p>' . htmlspecialchars($donnees['pseudo']) . htmlspecialchars($donnees['message']) . '</p>';
+ 
 }
 
 $reponse->closeCursor();
