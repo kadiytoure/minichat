@@ -24,13 +24,14 @@ catch (Exception $e) {
 }
 
 $req = $bdd->prepare('INSERT INTO chat(`id`, `pseudo`, `message`) VALUES(:id, :pseudo, :message)');
+
 $req->execute(array(
     'id' => $id,
     'pseudo' => $pseudo,
     'message' => $message
 ));
 
-echo 'Le message a bien été ajouté!';
+//echo 'Le message a bien été ajouté!';
 
 if ($req->execute()) {
     echo 'ton message a bien été envoyé';
