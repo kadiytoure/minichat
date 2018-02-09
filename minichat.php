@@ -28,7 +28,7 @@
 
 <?php
 try {
-$bdd = new PDO('mysql:host=localhost; dbname=minichat;charset=utf-8', 'ktoure', 'kadiy');
+$bdd = new PDO('mysql:host=localhost; dbname=minichat', 'kadiy', 'kadiy');
 }
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
