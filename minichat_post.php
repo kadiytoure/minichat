@@ -12,7 +12,7 @@ if (empty($_POST['message'] AND $_POST['pseudo'])){
     echo 'expect a message parameter';
     exit(1);
 } else {
-header('Location: minichat.php');
+//header('Location: minichat.php');
 }
 
 
