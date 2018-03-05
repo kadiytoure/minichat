@@ -13,7 +13,7 @@ if (empty($_POST['message'] AND $_POST['pseudo'])){
     echo 'expect a message parameter';
     exit(1);
 }
-
+$datemssge = date("Y-m-d H:i:s");
 // connexion to DB;
 try {
 $bdd = new PDO('mysql:host=localhost; dbname=minichat', 'kadiy', 'kadiy');
@@ -23,12 +23,13 @@ catch (Exception $e) {
 }
 
 // message hasse been inserted with a prepared request
-$req = $bdd->prepare('INSERT INTO chat(`id`, `pseudo`, `message`) VALUES(:id, :pseudo, :message)');
+$req = $bdd->prepare('INSERT INTO chat(`id`, `pseudo`, `message`, `date`) VALUES(:id, :pseudo, :message, :date)');
 
 $req->execute(array(
     'id' => $id,
     'pseudo' => $pseudo,
-    'message' => $message
+    'message' => $message,
+    'date' => $date
 ));
 
 // the visitor has been redirected to the minichat (minichat.php)

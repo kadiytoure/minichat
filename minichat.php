@@ -12,7 +12,7 @@
 
     <form action="minichat_post.php" method="post">
         <label for="pseudo">Pseudo:</label>
-        <input type="text" id="idpseudo" name="pseudo" placeholder="enter your name" /><br/>
+        <input type="text" id="idpseudo" name="pseudo" value="hi" placeholder="enter your name" /><br/>
         <label for="message">Message:</label>
         <input type="text" id="idmessage" name="message" placeholder="enter your message" /><br/>
         <input type="submit" value="send" /><br/>
