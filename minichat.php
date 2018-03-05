@@ -33,7 +33,7 @@ $reponse = $bdd->query('SELECT pseudo, message, date FROM chat ORDER BY ID DESC 
 //messages have been availed to see
 $donnees = $reponse->fetch();
 while ($donnees = $reponse->fetch()) {
- echo '<p>' . htmlspecialchars($donnees['pseudo']) . ' ' . ':' . ' ' . htmlspecialchars($donnees['message']) . '</p>';
+ echo '<p>' . htmlspecialchars($donnees['date']) . ' ' . htmlspecialchars($donnees['pseudo']) . ' ' . ':' . ' ' . htmlspecialchars($donnees['message']) . '</p>';
  
 }
 
