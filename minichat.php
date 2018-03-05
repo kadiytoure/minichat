@@ -28,7 +28,7 @@ catch (Exception $e) {
 }
 
 // 10 last messages have been taken
-$reponse = $bdd->query('SELECT pseudo, message FROM chat ORDER BY ID DESC LIMIT 0, 10');
+$reponse = $bdd->query('SELECT pseudo, message, date FROM chat ORDER BY ID DESC LIMIT 0, 10');
 
 //messages have been availed to see
 $donnees = $reponse->fetch();

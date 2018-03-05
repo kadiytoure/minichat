@@ -13,7 +13,7 @@ if (empty($_POST['message'] AND $_POST['pseudo'])){
     echo 'expect a message parameter';
     exit(1);
 }
-$datemssge = date("Y-m-d H:i:s");
+$date = date("Y-m-d H:i:s");
 // connexion to DB;
 try {
 $bdd = new PDO('mysql:host=localhost; dbname=minichat', 'kadiy', 'kadiy');
