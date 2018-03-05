@@ -19,6 +19,7 @@
     </form>
 
 <?php
+// connexion to DB
 try {
 $bdd = new PDO('mysql:host=localhost; dbname=minichat', 'kadiy', 'kadiy');
 }
@@ -26,7 +27,10 @@ catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
 
+// 10 last messages have been taken
 $reponse = $bdd->query('SELECT pseudo, message FROM chat ORDER BY ID DESC LIMIT 0, 10');
+
+//messages have been availed to see
 $donnees = $reponse->fetch();
 while ($donnees = $reponse->fetch()) {
  echo '<p>' . htmlspecialchars($donnees['pseudo']) . ' ' . ':' . ' ' . htmlspecialchars($donnees['message']) . '</p>';
