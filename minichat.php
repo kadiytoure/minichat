@@ -1,5 +1,6 @@
 <?php
-setcookie('pseudo', 'hi', time() + 365*24*3600, null, null, false, true);
+//setcookie('pseudo', 'hi', time() + 365*24*3600, null, null, false, true);
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,20 +9,27 @@ setcookie('pseudo', 'hi', time() + 365*24*3600, null, null, false, true);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>minichat</title>
 </head>
 
 <body>
-
     <form action="minichat_post.php" method="post">
-        <label for="pseudo">Pseudo:</label>
-        <input type="text" id="idpseudo" name="pseudo" value="hi" placeholder="enter your name" /><br/>
-        <label for="message">Message:</label>
-        <input type="text" id="idmessage" name="message" placeholder="enter your message" /><br/>
-        <input type="submit" value="send" /><br/>
+    <?php
+       if (isset($_SESSION['pseudo'])) {
+           echo "<p>".$_SESSION['pseudo']."</p><br/>";
+           } else { 
+           ?>
+      <label for="pseudo">Pseudo:</label>
+       <input type="text" id="idpseudo" name="pseudo" value="hi" placeholder="enter your name" /><br/>
+      <label for="message">Message:</label>
+       <input type="text" id="idmessage" name="message" placeholder="enter your message" /><br/>
+    <input type="submit" value="send" /><br/>
+        
+       
     </form>
 
 <?php
+           }
 // connexion to DB
 try {
 $bdd = new PDO('mysql:host=localhost; dbname=minichat', 'kadiy', 'kadiy');
