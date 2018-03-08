@@ -14,6 +14,8 @@ if (empty($_POST['message'] AND $_POST['pseudo'])){
     exit(1);
 }
 $date = date("Y-m-d H:i:s");
+// cookie to contain pseudo;
+setcookie('pseudo', $pseudo, time() + 365*24*3600, null, null, false, true);
 // connexion to DB;
 try {
 $bdd = new PDO('mysql:host=localhost; dbname=minichat', 'kadiy', 'kadiy');
