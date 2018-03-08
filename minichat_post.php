@@ -1,6 +1,6 @@
 <?php
-// Effectuer requête insérant le message;
-// Rediriger vers minichat.php
+// request to insert the message;
+// Redirected to minichat.php
 
 //Values of form have been taken
 $pseudo = htmlspecialchars ($_POST['pseudo']);
