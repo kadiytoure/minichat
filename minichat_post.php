@@ -1,5 +1,5 @@
 <?php
-// Effectuer requête insérant le message(la requête prepare);
+// Effectuer requête insérant le message;
 // Rediriger vers minichat.php
 
 //Values of form have been taken
